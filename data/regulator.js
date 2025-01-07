@@ -6,11 +6,7 @@ const mockRegulators = Array.from({ length: 500 }).map(() => ({
   type_id: faker.string.uuid(), // Substituído datatype.uuid por string.uuid
   mode: faker.helpers.arrayElement(["test", "live"]),
   id: idCounter++,
-  status: faker.helpers.arrayElement([
-    "Aguarda Telerregulação",
-    "Em Telerregulação",
-    "Aceite Atrasado",
-  ]),
+  status: faker.number.int({ min: 0, max: 40 }),
   name: faker.person.fullName(), // Atualização conforme a nova API do faker
   description: faker.lorem.sentence({ min: 500, max: 1000 }),
   county: faker.location.county(),
