@@ -1,0 +1,12 @@
+services:
+  mock-server:
+    build:
+      context: .
+      dockerfile: DockerFIle
+    ports:
+      - "3001:3001"
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    command: yarn start
+    restart: unless-stopped
