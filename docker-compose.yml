@@ -2,9 +2,9 @@ services:
   mock-server:
     build:
       context: .
-      dockerfile: DockerFIle
+      dockerfile: Dockerfile
     ports:
-      - "3001:3001"
+      - "3090:3001"
     volumes:
       - .:/usr/src/app
       - /usr/src/app/node_modules
