@@ -4,12 +4,7 @@ let consultantIdCounter = 1000;
 
 const mockConsultants = Array.from({ length: 500 }).map(() => ({
   id: consultantIdCounter++,
-  status: faker.helpers.arrayElement([
-    "Pending",
-    "In Progress",
-    "Completed",
-    "Cancelled",
-  ]),
+  status: faker.number.int({ min: 0, max: 40 }),
   teleRegulator: faker.person.fullName(),
   solicitation: faker.lorem.paragraph(),
   requester: faker.person.fullName(),
