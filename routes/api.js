@@ -1,7 +1,7 @@
 const express = require("express");
 const { mockRegulators } = require("../data/regulator");
 const { mockRegulatedList } = require("../data/regulatorList");
-const { mockConsultants } = require("../data/mockConsultants");
+const { mockConsultants } = require("../data/consultant");
 
 const router = express.Router();
 
