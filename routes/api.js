@@ -1,6 +1,7 @@
 const express = require("express");
 const { mockRegulators } = require("../data/regulator");
 const { mockRegulatedList } = require("../data/regulatorList");
+const { mockConsultants } = require("../data/mockConsultants");
 
 const router = express.Router();
 
@@ -56,6 +57,5 @@ router.get("/consultant/home", (req, res) => {
     data: mockConsultants, // Retorna os dados mockados
   });
 });
-
 
 module.exports = router;
