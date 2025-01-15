@@ -49,4 +49,13 @@ router.get("/regulator/returned", (req, res) => {
   });
 });
 
+// Rota GET para '/consultant/home'
+router.get("/consultant/home", (req, res) => {
+  res.status(200).json({
+    message: "Success",
+    data: mockConsultants, // Retorna os dados mockados
+  });
+});
+
+
 module.exports = router;
