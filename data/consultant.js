@@ -14,6 +14,18 @@ const mockConsultants = Array.from({ length: 500 }).map(() => ({
   created_at: faker.date.past().toISOString(),
 }));
 
+const mockConsultantAnswers = Array.from({ length: 500 }).map(() => ({
+  id: consultantIdCounter++,
+  status: faker.number.int({ min: 0, max: 40 }),
+  teleRegulator: faker.person.fullName(),
+  solicitation: faker.lorem.paragraph(),
+  requester: faker.person.fullName(),
+  municipality: faker.location.city(),
+  created_at: faker.date.past().toISOString(),
+  updated_at: faker.date.recent().toISOString(),
+}));
+
 module.exports = {
   mockConsultants,
+  mockConsultantAnswers,
 };
