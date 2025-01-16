@@ -25,7 +25,25 @@ const mockConsultantAnswers = Array.from({ length: 500 }).map(() => ({
   updated_at: faker.date.recent().toISOString(),
 }));
 
+const mockProcessSolicitations = Array.from({ length: 500 }).map(() => ({
+  id: consultantIdCounter++,
+  requester: faker.person.fullName(),
+  solicitation: faker.lorem.paragraph(),
+  status: faker.helpers.arrayElement([
+    "Open",
+    "In Progress",
+    "Closed",
+    "Cancelled",
+  ]),
+  municipality: faker.location.city(),
+  elapsed_time: faker.number.int({ min: 0, max: 300 }),
+  created_at: faker.date.past().toISOString(),
+  updated_at: faker.date.recent().toISOString(),
+  updated_by: faker.person.fullName(),
+}));
+
 module.exports = {
   mockConsultants,
   mockConsultantAnswers,
+  mockProcessSolicitations,
 };
