@@ -37,8 +37,18 @@ const mockProcessSolicitations = Array.from({ length: 500 }).map(() => ({
   updated_by: faker.person.fullName(),
 }));
 
+const mockSolicitationsSOF = Array.from({ length: 500 }).map(() => ({
+  id: consultantIdCounter++,
+  requester: faker.person.fullName(),
+  solicitation: faker.lorem.paragraph(),
+  teleconsultant: faker.person.fullName(),
+  municipality: faker.location.city(),
+  indicated_at: faker.date.recent().toISOString(),
+}));
+
 module.exports = {
   mockConsultants,
   mockConsultantAnswers,
   mockProcessSolicitations,
+  mockSolicitationsSOF,
 };
