@@ -4,6 +4,7 @@ const { mockRegulatedList } = require("../data/regulatorList");
 const {
   mockConsultants,
   mockConsultantAnswers,
+  mockProcessSolicitations,
 } = require("../data/consultant");
 
 const router = express.Router();
@@ -69,4 +70,11 @@ router.get("/consultant/answers", (req, res) => {
   });
 });
 
+// Rota GET para '/processes/solicitations'
+router.get("/processes/solicitations", (req, res) => {
+  res.status(200).json({
+    message: "Success",
+    data: mockProcessSolicitations, // Retorna os dados mockados
+  });
+});
 module.exports = router;
