@@ -29,12 +29,7 @@ const mockProcessSolicitations = Array.from({ length: 500 }).map(() => ({
   id: consultantIdCounter++,
   requester: faker.person.fullName(),
   solicitation: faker.lorem.paragraph(),
-  status: faker.helpers.arrayElement([
-    "Open",
-    "In Progress",
-    "Closed",
-    "Cancelled",
-  ]),
+  status: faker.number.int({ min: 0, max: 40 }),
   municipality: faker.location.city(),
   elapsed_time: faker.number.int({ min: 0, max: 300 }),
   created_at: faker.date.past().toISOString(),
