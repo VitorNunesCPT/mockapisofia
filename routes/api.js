@@ -1,7 +1,10 @@
 const express = require("express");
 const { mockRegulators } = require("../data/regulator");
 const { mockRegulatedList } = require("../data/regulatorList");
-const { mockConsultants } = require("../data/consultant");
+const {
+  mockConsultants,
+  mockConsultantAnswers,
+} = require("../data/consultant");
 
 const router = express.Router();
 
@@ -55,6 +58,14 @@ router.get("/consultant/home", (req, res) => {
   res.status(200).json({
     message: "Success",
     data: mockConsultants, // Retorna os dados mockados
+  });
+});
+
+// Rota GET para '/consultant/answers'
+router.get("/consultant/answers", (req, res) => {
+  res.status(200).json({
+    message: "Success",
+    data: mockConsultantAnswers, // Retorna os dados mockados
   });
 });
 
