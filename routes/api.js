@@ -1,6 +1,5 @@
 const express = require("express");
-const { mockRegulators } = require("../data/regulator");
-const { mockRegulatedList } = require("../data/regulatorList");
+const { mockRegulators, mockRegulatedList } = require("../data/regulator");
 const {
   mockConsultants,
   mockConsultantAnswers,
