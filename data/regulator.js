@@ -34,6 +34,27 @@ const mockRegulators = Array.from({ length: 500 }).map(() => ({
   mobile: faker.phone.number("##########"),
 }));
 
+const mockRegulatedList = Array.from({ length: 10 }).map(() => ({
+  id: idCounter++,
+  description: faker.lorem.sentence({ min: 10, max: 50 }),
+  profile_id: faker.number.int(),
+  name: faker.person.fullName(),
+  role: faker.person.jobTitle(),
+  email: faker.internet.email(),
+  created_at: faker.date.past().toISOString(),
+  mobile: faker.phone.number("##########"),
+  returnHistory: Array.from({
+    length: faker.number.int({ min: 1, max: 5 }),
+  }).map(() => ({
+    name: faker.person.fullName(),
+    role: faker.person.jobTitle(),
+    status: faker.number.int({ min: 0, max: 40 }),
+    description: faker.lorem.sentence({ min: 500, max: 1000 }),
+    updated_at: faker.date.recent().toISOString(),
+  })),
+}));
+
 module.exports = {
   mockRegulators,
+  mockRegulatedList,
 };
