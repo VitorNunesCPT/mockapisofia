@@ -46,9 +46,29 @@ const mockSolicitationsSOF = Array.from({ length: 500 }).map(() => ({
   indicated_at: faker.date.recent().toISOString(),
 }));
 
+const mockScheduledsLista = Array.from({ length: 500 }).map(() => ({
+  id: consultantIdCounter++,
+  status: faker.number.int({ min: 0, max: 40 }),
+  teleRegulator: faker.person.fullName(),
+  solicitation: faker.lorem.paragraph(),
+  requester: faker.person.fullName(),
+  municipality: faker.location.city(),
+  created_at: faker.date.past().toISOString(),
+  link_teleconsultation: faker.internet.url(),
+  returnHistory: Array.from({
+    length: faker.number.int(1),
+  }).map(() => ({
+    name: faker.person.fullName(),
+    role: faker.person.jobTitle(),
+    status: faker.number.int({ min: 0, max: 40 }),
+    Scheduleds_at: faker.date.recent().toISOString(),
+  })),
+}));
+
 module.exports = {
   mockConsultants,
   mockConsultantAnswers,
   mockProcessSolicitations,
   mockSolicitationsSOF,
+  mockScheduledsLista,
 };
